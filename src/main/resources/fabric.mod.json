@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "server-message-sniper",
+	"version": "${version}",
+	"name": "Server Message Sniper",
+	"description": "Utilities for intercepting and handling messages coming from the server.",
+	"authors": [
+		"FredTheNerd"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/server-message-sniper/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ftn.servermsgsniper.ServerMessageSniper"
+		],
+		"client": [
+			"ftn.servermsgsniper.ServerMessageSniperClient"
+		]
+	},
+	"mixins": [
+		"server-message-sniper.mixins.json",
+		{
+			"config": "server-message-sniper.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.9",
+		"minecraft": "~1.20.4",
+		"java": ">=17"
+	}
+}

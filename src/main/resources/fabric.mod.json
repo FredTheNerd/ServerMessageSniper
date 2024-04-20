@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "server-message-sniper",
-	"version": "1.0.1",
+	"version": "${version}",
 	"name": "Server Message Sniper",
 	"description": "Utilities for intercepting and handling messages coming from the server.",
 	"authors": [

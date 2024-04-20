@@ -86,7 +86,9 @@ public class PacketReaderHelper {
     static {
         // TODO: data driven
         auto.add((str) -> (Pattern.compile("chat\\.type\\.advancement\\..*").asPredicate().test(str) && !str.contains(MinecraftClient.getInstance().getSession().getUsername())));
+        auto.add((str) -> (Pattern.compile("death\\..*").asPredicate().test(str) && !str.contains(MinecraftClient.getInstance().getSession().getUsername())));
         option.put(Pattern.compile("chat\\.type\\.advancement\\..*").asPredicate(), new ClickEvent(RUN_COMMAND, "gg"));
+        option.put(Pattern.compile("death\\..*").asPredicate(), new ClickEvent(RUN_COMMAND, "L"));
         ignore.add(Pattern.compile("/tell .*").asPredicate());
     }
 }
